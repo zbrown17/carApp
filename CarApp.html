@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="CarApp">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="CarApp.js"></script>
+    <style>
+        body {
+            background: lightgrey;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body ng-controller="MainCtrl">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+            <lable>Year</lable>
+            <input class="form-control" ng-init="year" ng-model="year">
+        </div>
+            <div class="form-group">
+            <lable>Make</lable>
+            <input class="form-control" ng-init="make" ng-model="make">
+        </div>
+            <div class="form-group">
+            <lable>Model</lable>
+            <input class="form-control" ng-init="model" ng-model="model">
+        </div>
+            <div class="form-group">
+            <lable>Color</lable>
+            <input class="form-control" ng-init="color" ng-model="color">
+        </div>
+            <div class="btn-group"><button class="btn btn-primary" ng-click="addCar(year,make,model,color)">
+                Add Car</button></div>
+        </div>
+        <div class="col-md-8">
+            <ul ng-repeat="car in carInventory">
+                <li>{{car.year}}</li>
+                <li>{{car.make}}</li>
+                <li>{{car.model}}</li>
+                <li>{{car.color}}</li>
+            </ul>
+            <div class="btn-group"><button class="btn btn-warning" ng-click="printInventory()">Print Inventory</button> </div>
+        </div>
+    </div>    
+</div>
+    
+    
+</body>
+
+</html>
